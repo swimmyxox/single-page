@@ -95,6 +95,9 @@ body {
       text-align: center;
       transform: translate(-50%, -50%);
       font-size: 3.6rem; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper header .top_text {
+          font-size: 2.6rem; } }
     .wrapper header .scroll_icon {
       position: absolute;
       bottom: 5%;
@@ -154,7 +157,7 @@ body {
       word-break: keep-all; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
         .wrapper .container p {
-          font-size: 2rem; } }
+          font-size: 1.8rem; } }
     .wrapper .container .hero_img {
       position: relative;
       width: 100%;
@@ -228,6 +231,9 @@ body {
       color: #bfaaa1;
       font-size: 6rem;
       font-weight: 600; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper .container .tagline {
+          font-size: 5rem; } }
     .wrapper .container .items {
       display: flex;
       flex-wrap: wrap;
@@ -322,6 +328,7 @@ body {
     min-height: 36vh;
     background-color: #3b3b3b;
     color: #fff;
+    vertical-align: middle;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding: 5%;
@@ -342,9 +349,8 @@ body {
       .wrapper footer div a {
         color: #dfe9f0;
         text-decoration: none;
-        border-bottom: 1px solid;
-        font-style: italic;
         font-size: 1.8rem;
+        font-style: italic;
         line-height: 3rem; }
     .wrapper footer .thanks-list {
       width: calc(90% - 300px);
@@ -354,13 +360,6 @@ body {
         flex-wrap: wrap; }
         .wrapper footer .thanks-list ul li {
           flex-basis: 240px; }
-          .wrapper footer .thanks-list ul li a {
-            text-decoration: none;
-            padding: 0 0.4rem;
-            border-bottom: 1px solid;
-            font-style: italic;
-            font-size: 1.8rem;
-            line-height: 3rem; }
     .wrapper footer small {
       position: absolute;
       bottom: 3vmin;

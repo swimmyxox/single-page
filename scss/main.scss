@@ -156,6 +156,10 @@ body {
       text-align: center;
       transform: translate(-50%, -50%);
       font-size: 3.6rem;
+
+      @include phone {
+        font-size: 2.6rem;
+      }
     }
 
     .scroll_icon {
@@ -235,7 +239,7 @@ body {
       word-break: keep-all;
 
       @include phone {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
     }
 
@@ -338,6 +342,10 @@ body {
       color: $lightbrown;
       font-size: 6rem;
       font-weight: 600;
+
+      @include phone {
+        font-size: 5rem;
+      }
     }
 
     .items {
@@ -466,12 +474,15 @@ body {
     }
   }
 
+  // ---------- footer ----------
+
   footer {
     position: relative;
     width: 100vw;
     min-height: 36vh;
     background-color: $gray;
     color: $white;
+    vertical-align: middle;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     padding: 5%;
@@ -500,9 +511,8 @@ body {
       a {
         color: $iceblue;
         text-decoration: none;
-        border-bottom: 1px solid;
-        font-style: italic;
         font-size: 1.8rem;
+        font-style: italic;
         line-height: 3rem;
       }
     }
@@ -515,14 +525,6 @@ body {
         flex-wrap: wrap;
         li {
           flex-basis: 240px;
-          a {
-            text-decoration: none;
-            padding: 0 0.4rem;
-            border-bottom: 1px solid;
-            font-style: italic;
-            font-size: 1.8rem;
-            line-height: 3rem;
-          }
         }
       }
     }
