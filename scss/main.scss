@@ -158,7 +158,7 @@ body {
       font-size: 3.6rem;
 
       @include phone {
-        font-size: 2.6rem;
+        font-size: 3rem;
       }
     }
 
@@ -227,7 +227,7 @@ body {
       word-break: keep-all;
 
       @include phone {
-        font-size: 3.2rem;
+        font-size: 3rem;
       }
     }
 
@@ -250,6 +250,8 @@ body {
       height: 55vh;
       background: url(../images/hero.jpg) 70% center no-repeat;
       background-size: cover;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
     .animation {
@@ -268,6 +270,8 @@ body {
       animation: slideIn 1s ease-in-out forwards;
       background: $iceblue;
       pointer-events: none;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       z-index: 1;
     }
 
@@ -308,13 +312,13 @@ body {
     }
 
     .show {
-      -webkit-animation: show 1.2s ease forwards;
-      animation: show 1.2s ease forwards;
+      -webkit-animation: show 1.6s ease forwards;
+      animation: show 1.6s ease forwards;
     }
 
     @-webkit-keyframes show {
       0% {
-        opacity: 0;
+        opacity: 0.2;
         transform: translateY(30px);
       }
       100% {
@@ -325,7 +329,7 @@ body {
 
     @keyframes show {
       0% {
-        opacity: 0;
+        opacity: 0.2;
         transform: translateY(30px);
       }
       100% {
@@ -355,6 +359,8 @@ body {
       justify-content: center;
       align-items: center;
       margin: 20px 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
 
       .item {
         position: relative;
@@ -424,7 +430,8 @@ body {
       line-height: 3.8rem;
 
       @include phone {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
       }
 
       dt {
@@ -525,7 +532,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         li {
-          flex-basis: 240px;
+          flex-basis: 230px;
         }
       }
     }

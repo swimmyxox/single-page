@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     );
     const show = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
+        if (entry.intersectionRatio > 0.03) {
           entry.target.classList.add("show");
         } else {
           entry.target.classList.remove("show");

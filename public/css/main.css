@@ -97,7 +97,7 @@ body {
       font-size: 3.6rem; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
         .wrapper header .top_text {
-          font-size: 2.6rem; } }
+          font-size: 3rem; } }
     .wrapper header .scroll_icon {
       position: absolute;
       bottom: 5%;
@@ -148,7 +148,7 @@ body {
       word-break: keep-all; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
         .wrapper .container h1 {
-          font-size: 3.2rem; } }
+          font-size: 3rem; } }
     .wrapper .container p {
       font-weight: 500;
       font-size: 2.4rem;
@@ -164,7 +164,9 @@ body {
       width: 100%;
       height: 55vh;
       background: url(../images/hero.jpg) 70% center no-repeat;
-      background-size: cover; }
+      background-size: cover;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden; }
     .wrapper .container .animation {
       position: relative;
       -webkit-animation: fade 1.6s ease-in-out forwards;
@@ -179,6 +181,8 @@ body {
       animation: slideIn 1s ease-in-out forwards;
       background: #dfe9f0;
       pointer-events: none;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       z-index: 1; }
 
 @-webkit-keyframes fade {
@@ -205,12 +209,12 @@ body {
   100% {
     transform: translateX(100%); } }
     .wrapper .container .show {
-      -webkit-animation: show 1.2s ease forwards;
-      animation: show 1.2s ease forwards; }
+      -webkit-animation: show 1.6s ease forwards;
+      animation: show 1.6s ease forwards; }
 
 @-webkit-keyframes show {
   0% {
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(30px); }
   100% {
     opacity: 1;
@@ -218,7 +222,7 @@ body {
 
 @keyframes show {
   0% {
-    opacity: 0;
+    opacity: 0.2;
     transform: translateY(30px); }
   100% {
     opacity: 1;
@@ -240,7 +244,9 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      margin: 20px 0; }
+      margin: 20px 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden; }
       .wrapper .container .items .item {
         position: relative;
         margin: 0 30px 60px 30px; }
@@ -291,7 +297,8 @@ body {
       line-height: 3.8rem; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
         .wrapper .container dl {
-          font-size: 2rem; } }
+          font-size: 1.8rem;
+          line-height: 2.8rem; } }
       .wrapper .container dl dt {
         float: left; }
       .wrapper .container dl dd {
@@ -360,7 +367,7 @@ body {
         display: flex;
         flex-wrap: wrap; }
         .wrapper footer .thanks-list ul li {
-          flex-basis: 240px; }
+          flex-basis: 230px; }
     .wrapper footer small {
       position: absolute;
       bottom: 3vmin;
