@@ -100,7 +100,7 @@ body {
       font-size: 3.6rem; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
         .wrapper header .top_text {
-          font-size: 3rem; } }
+          font-size: 2.8rem; } }
     .wrapper header .scroll_icon {
       position: absolute;
       bottom: 5%;
@@ -110,6 +110,9 @@ body {
       height: 60px;
       border-radius: 30px;
       border: solid 2px #fff; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper header .scroll_icon {
+          bottom: 12%; } }
       .wrapper header .scroll_icon:before {
         content: "";
         position: absolute;
@@ -122,6 +125,12 @@ body {
         -webkit-animation: scroll 1.2s infinite ease;
         animation: scroll 1.2s infinite ease;
         opacity: 1; }
+      .wrapper header .scroll_icon:after {
+        content: "scroll";
+        position: absolute;
+        top: -25px;
+        left: -10px;
+        font-size: 1.4rem; }
 
 @-webkit-keyframes scroll {
   0% {
