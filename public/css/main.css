@@ -77,7 +77,7 @@ body {
   .wrapper header {
     position: relative;
     width: 100vw;
-    height: 100vh; }
+    height: 100%; }
     .wrapper header .logo {
       position: absolute;
       top: 3vmin;
@@ -110,9 +110,6 @@ body {
       height: 60px;
       border-radius: 30px;
       border: solid 2px #fff; }
-      @media screen and (max-width: 767px) and (min-width: 320px) {
-        .wrapper header .scroll_icon {
-          bottom: 12%; } }
       .wrapper header .scroll_icon:before {
         content: "";
         position: absolute;
