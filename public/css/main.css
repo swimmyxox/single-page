@@ -25,7 +25,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.3rem;
   overflow-y: scroll;
-  overflow-x: hidden;
   -webkit-overflow-scrolling: touch; }
 
 .square {
@@ -40,38 +39,13 @@ body {
       width: 70vmin;
       height: 70vmin; } }
 
-.row2 {
-  height: 55vh; }
-
 .background {
   position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: #000;
-  background-image: url("../images/jason-betz-klub_Ke-268-unsplash.jpg");
-  background-position: right top;
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-nav {
-  position: fixed;
-  top: 3vmin;
-  right: 3vmin;
-  z-index: 3;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl; }
-  @media screen and (max-width: 767px) and (min-width: 320px) {
-    nav {
-      display: none; } }
-  nav a {
-    position: relative;
-    text-decoration: none;
-    color: #fff;
-    padding-bottom: 30px;
-    letter-spacing: 0.4rem; }
-    nav a:hover {
-      opacity: 0.5; }
+  background: url(../images/bg.jpg) center top no-repeat;
+  background-size: cover; }
 
 .wrapper {
   width: 100vw;
@@ -79,6 +53,27 @@ nav {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; }
+  .wrapper nav {
+    position: fixed;
+    top: 3vmin;
+    right: 2vmin;
+    z-index: 3; }
+    @media screen and (max-width: 767px) and (min-width: 320px) {
+      .wrapper nav {
+        display: none; } }
+    .wrapper nav ul {
+      display: flex;
+      flex-direction: column; }
+      .wrapper nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        padding-bottom: 30px;
+        letter-spacing: 0.4rem;
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl; }
+        .wrapper nav ul li a:hover {
+          opacity: 0.5; }
   .wrapper header {
     position: relative;
     width: 100vw;
@@ -89,7 +84,10 @@ nav {
       left: 3vw;
       font-weight: 600;
       font-size: 3rem; }
-    .wrapper header .title {
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper header .logo {
+          font-size: 2.4rem; } }
+    .wrapper header .top_text {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -97,10 +95,7 @@ nav {
       text-align: center;
       transform: translate(-50%, -50%);
       font-size: 3.6rem; }
-      @media screen and (max-width: 767px) and (min-width: 320px) {
-        .wrapper header .title {
-          font-size: 2.6rem; } }
-    .wrapper header .icon {
+    .wrapper header .scroll_icon {
       position: absolute;
       bottom: 5%;
       left: 50%;
@@ -109,7 +104,7 @@ nav {
       height: 60px;
       border-radius: 30px;
       border: solid 2px #fff; }
-      .wrapper header .icon:before {
+      .wrapper header .scroll_icon:before {
         content: "";
         position: absolute;
         top: 9px;
@@ -118,11 +113,11 @@ nav {
         height: 16px;
         background-color: #fff;
         border-radius: 8px;
-        -webkit-animation: down 1.2s infinite ease;
-        animation: down 1.2s infinite ease;
+        -webkit-animation: scroll 1.2s infinite ease;
+        animation: scroll 1.2s infinite ease;
         opacity: 1; }
 
-@-webkit-keyframes down {
+@-webkit-keyframes scroll {
   0% {
     opacity: 1;
     transform: translate(0px, 0px); }
@@ -130,7 +125,7 @@ nav {
     opacity: 0;
     transform: translate(0px, 20px); } }
 
-@keyframes down {
+@keyframes scroll {
   0% {
     opacity: 1;
     transform: translate(0px, 0px); }
@@ -147,40 +142,40 @@ nav {
     .wrapper .container h1 {
       font-size: 4.2rem;
       letter-spacing: 0.8rem;
-      transition-delay: 0.2s; }
+      word-break: keep-all; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper .container h1 {
+          font-size: 3.2rem; } }
     .wrapper .container p {
       font-weight: 500;
       font-size: 2.4rem;
       padding: 30px 0;
       line-height: 3.6rem;
-      word-break: keep-all;
-      transition-delay: 1s; }
-    .wrapper .container .image {
+      word-break: keep-all; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper .container p {
+          font-size: 2rem; } }
+    .wrapper .container .hero_img {
       position: relative;
-      width: 100%; }
-      .wrapper .container .image img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        -o-object-position: 70% 50%;
-        object-position: 70% 50%; }
-    .wrapper .container .animate {
+      width: 100%;
+      height: 55vh;
+      background: url(../images/hero.jpg) 70% center no-repeat;
+      background-size: cover; }
+    .wrapper .container .animation {
+      position: relative;
       -webkit-animation: fade 1.6s ease-in-out forwards;
       animation: fade 1.6s ease-in-out forwards; }
-      .wrapper .container .animate:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-animation: slideIn 1s ease-in-out forwards;
-        animation: slideIn 1s ease-in-out forwards;
-        background: #dfe9f0;
-        pointer-events: none;
-        z-index: 1; }
+    .wrapper .container span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: slideIn 1s ease-in-out forwards;
+      animation: slideIn 1s ease-in-out forwards;
+      background: #dfe9f0;
+      pointer-events: none;
+      z-index: 1; }
 
 @-webkit-keyframes fade {
   0% {
@@ -206,21 +201,25 @@ nav {
   100% {
     transform: translateX(100%); } }
     .wrapper .container .show {
-      -webkit-animation: show 1.6s ease-in-out forwards;
-      animation: show 1.6s ease-in-out forwards; }
+      -webkit-animation: show 1.2s ease forwards;
+      animation: show 1.2s ease forwards; }
 
 @-webkit-keyframes show {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    transform: translateY(30px); }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+    transform: translateY(0px); } }
 
 @keyframes show {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    transform: translateY(30px); }
   100% {
-    opacity: 1; } }
-    .wrapper .container .point {
+    opacity: 1;
+    transform: translateY(0px); } }
+    .wrapper .container .tagline {
       position: relative;
       top: -39px;
       right: 0;
@@ -247,37 +246,45 @@ nav {
           height: 100%;
           -o-object-fit: cover;
           object-fit: cover; }
-        .wrapper .container .items .item .item__text {
+        .wrapper .container .items .item .item__caption {
           position: absolute;
           width: 100%;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.5);
           opacity: 0;
           transition: all 0.4s ease; }
-          .wrapper .container .items .item .item__text p {
+          .wrapper .container .items .item .item__caption .item__name {
             position: absolute;
             top: 45%;
             left: 50%;
+            width: 90%;
             transform: translate(-50%, -50%);
-            color: #fff;
+            font-size: 2.4rem;
             text-align: center;
+            color: #fff;
             transition: all 0.3s ease; }
-          .wrapper .container .items .item .item__text i {
+          .wrapper .container .items .item .item__caption i {
             position: absolute;
             top: 0;
             left: 5%;
             color: #fff;
             font-size: 2rem;
             transition: all 0.3s ease; }
-        .wrapper .container .items .item:hover .item__text {
+        .wrapper .container .items .item:hover .item__caption,
+        .wrapper .container .items .item:active .item__caption {
           opacity: 1; }
-        .wrapper .container .items .item:hover p {
+        .wrapper .container .items .item:hover .item__name,
+        .wrapper .container .items .item:active .item__name {
           top: 50%; }
-        .wrapper .container .items .item:hover i {
+        .wrapper .container .items .item:hover i,
+        .wrapper .container .items .item:active i {
           top: 5%; }
     .wrapper .container dl {
       font-size: 2.4rem;
       line-height: 3.8rem; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper .container dl {
+          font-size: 2rem; } }
       .wrapper .container dl dt {
         float: left; }
       .wrapper .container dl dd {
@@ -292,26 +299,22 @@ nav {
       @media screen and (max-width: 1024px) and (min-width: 320px) {
         .wrapper .container .information {
           justify-content: center; } }
-      .wrapper .container .information .storeimage {
+      .wrapper .container .information .shop_img {
         position: relative;
         width: 38vw;
         height: 40vh;
-        margin: 20px 0; }
+        margin: 20px 0;
+        background: url(../images/shop.jpg) center center no-repeat;
+        background-size: cover; }
         @media screen and (max-width: 1024px) and (min-width: 320px) {
-          .wrapper .container .information .storeimage {
+          .wrapper .container .information .shop_img {
             width: 100%; } }
-        .wrapper .container .information .storeimage img {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          -o-object-fit: cover;
-          object-fit: cover; }
-      .wrapper .container .information .storemap {
+      .wrapper .container .information .shop_map {
         width: 50vw;
         height: 40vh;
         margin: 20px 0; }
         @media screen and (max-width: 1024px) and (min-width: 320px) {
-          .wrapper .container .information .storemap {
+          .wrapper .container .information .shop_map {
             width: 100%; } }
   .wrapper footer {
     position: relative;
@@ -319,6 +322,8 @@ nav {
     min-height: 36vh;
     background-color: #3b3b3b;
     color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     padding: 5%;
     display: flex;
     flex-wrap: wrap; }
@@ -341,15 +346,15 @@ nav {
         font-style: italic;
         font-size: 1.8rem;
         line-height: 3rem; }
-    .wrapper footer .thanks {
+    .wrapper footer .thanks-list {
       width: calc(90% - 300px);
       min-width: 300px; }
-      .wrapper footer .thanks ul {
+      .wrapper footer .thanks-list ul {
         display: flex;
         flex-wrap: wrap; }
-        .wrapper footer .thanks ul li {
+        .wrapper footer .thanks-list ul li {
           flex-basis: 240px; }
-          .wrapper footer .thanks ul li a {
+          .wrapper footer .thanks-list ul li a {
             text-decoration: none;
             padding: 0 0.4rem;
             border-bottom: 1px solid;

@@ -43,6 +43,8 @@ li {
   list-style: none;
 }
 
+// ----- html , body -----
+
 html {
   height: 100%;
   width: 100%;
@@ -58,7 +60,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.3rem;
   overflow-y: scroll;
-  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -79,47 +80,17 @@ body {
   }
 }
 
-.row2 {
-  height: 55vh;
-}
-
+// ---------- top background  ----------
 .background {
   position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: $black;
-  background-image: url("../images/jason-betz-klub_Ke-268-unsplash.jpg");
-  background-position: right top;
+  background: url(../images/bg.jpg) center top no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
-nav {
-  position: fixed;
-  top: 3vmin;
-  right: 3vmin;
-  z-index: 3;
-  -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl;
-  writing-mode: vertical-rl;
-
-  @include phone {
-    display: none;
-  }
-
-  a {
-    position: relative;
-    text-decoration: none;
-    color: $white;
-    padding-bottom: 30px;
-    letter-spacing: 0.4rem;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  }
-}
-
+// ---------- wrapper ----------
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -127,6 +98,39 @@ nav {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 
+  // ---------- nav ----------
+  nav {
+    position: fixed;
+    top: 3vmin;
+    right: 2vmin;
+    z-index: 3;
+
+    @include phone {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      li {
+        a {
+          text-decoration: none;
+          color: $white;
+          padding-bottom: 30px;
+          letter-spacing: 0.4rem;
+          -webkit-writing-mode: vertical-rl;
+          -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  // ---------- header ----------
   header {
     position: relative;
     width: 100vw;
@@ -138,9 +142,13 @@ nav {
       left: 3vw;
       font-weight: 600;
       font-size: 3rem;
+
+      @include phone {
+        font-size: 2.4rem;
+      }
     }
 
-    .title {
+    .top_text {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -148,13 +156,9 @@ nav {
       text-align: center;
       transform: translate(-50%, -50%);
       font-size: 3.6rem;
-
-      @include phone {
-        font-size: 2.6rem;
-      }
     }
 
-    .icon {
+    .scroll_icon {
       position: absolute;
       bottom: 5%;
       left: 50%;
@@ -173,13 +177,13 @@ nav {
         height: 16px;
         background-color: $white;
         border-radius: 8px;
-        -webkit-animation: down 1.2s infinite ease;
-        animation: down 1.2s infinite ease;
+        -webkit-animation: scroll 1.2s infinite ease;
+        animation: scroll 1.2s infinite ease;
         opacity: 1;
       }
     }
 
-    @-webkit-keyframes down {
+    @-webkit-keyframes scroll {
       0% {
         opacity: 1;
         transform: translate(0px, 0px);
@@ -191,7 +195,7 @@ nav {
       }
     }
 
-    @keyframes down {
+    @keyframes scroll {
       0% {
         opacity: 1;
         transform: translate(0px, 0px);
@@ -204,6 +208,7 @@ nav {
     }
   }
 
+  // ---------- container ----------
   .container {
     position: relative;
     width: 100vw;
@@ -215,7 +220,11 @@ nav {
     h1 {
       font-size: 4.2rem;
       letter-spacing: 0.8rem;
-      transition-delay: 0.2s;
+      word-break: keep-all;
+
+      @include phone {
+        font-size: 3.2rem;
+      }
     }
 
     p {
@@ -224,41 +233,37 @@ nav {
       padding: 30px 0;
       line-height: 3.6rem;
       word-break: keep-all;
-      transition-delay: 1s;
+
+      @include phone {
+        font-size: 2rem;
+      }
     }
 
-    .image {
+    .hero_img {
       position: relative;
       width: 100%;
-
-      img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -o-object-fit: cover;
-        object-fit: cover;
-        -o-object-position: 70% 50%;
-        object-position: 70% 50%;
-      }
+      height: 55vh;
+      background: url(../images/hero.jpg) 70% center no-repeat;
+      background-size: cover;
     }
 
-    .animate {
+    .animation {
+      position: relative;
       -webkit-animation: fade 1.6s ease-in-out forwards;
       animation: fade 1.6s ease-in-out forwards;
+    }
 
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-animation: slideIn 1s ease-in-out forwards;
-        animation: slideIn 1s ease-in-out forwards;
-        background: $iceblue;
-        pointer-events: none;
-        z-index: 1;
-      }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: slideIn 1s ease-in-out forwards;
+      animation: slideIn 1s ease-in-out forwards;
+      background: $iceblue;
+      pointer-events: none;
+      z-index: 1;
     }
 
     @-webkit-keyframes fade {
@@ -298,29 +303,33 @@ nav {
     }
 
     .show {
-      -webkit-animation: show 1.6s ease-in-out forwards;
-      animation: show 1.6s ease-in-out forwards;
+      -webkit-animation: show 1.2s ease forwards;
+      animation: show 1.2s ease forwards;
     }
 
     @-webkit-keyframes show {
       0% {
         opacity: 0;
+        transform: translateY(30px);
       }
       100% {
         opacity: 1;
+        transform: translateY(0px);
       }
     }
 
     @keyframes show {
       0% {
         opacity: 0;
+        transform: translateY(30px);
       }
       100% {
         opacity: 1;
+        transform: translateY(0px);
       }
     }
 
-    .point {
+    .tagline {
       position: relative;
       top: -39px;
       right: 0;
@@ -354,7 +363,7 @@ nav {
           object-fit: cover;
         }
 
-        .item__text {
+        .item__caption {
           position: absolute;
           width: 100%;
           height: 100%;
@@ -362,13 +371,15 @@ nav {
           opacity: 0;
           transition: all 0.4s ease;
 
-          p {
+          .item__name {
             position: absolute;
             top: 45%;
             left: 50%;
+            width: 90%;
             transform: translate(-50%, -50%);
-            color: $white;
+            font-size: 2.4rem;
             text-align: center;
+            color: $white;
             transition: all 0.3s ease;
           }
 
@@ -382,15 +393,18 @@ nav {
           }
         }
 
-        &:hover .item__text {
+        &:hover .item__caption,
+        &:active .item__caption {
           opacity: 1;
         }
 
-        &:hover p {
+        &:hover .item__name,
+        &:active .item__name {
           top: 50%;
         }
 
-        &:hover i {
+        &:hover i,
+        &:active i {
           top: 5%;
         }
       }
@@ -399,6 +413,10 @@ nav {
     dl {
       font-size: 2.4rem;
       line-height: 3.8rem;
+
+      @include phone {
+        font-size: 2rem;
+      }
 
       dt {
         float: left;
@@ -423,26 +441,20 @@ nav {
         justify-content: center;
       }
 
-      .storeimage {
+      .shop_img {
         position: relative;
         width: 38vw;
         height: 40vh;
         margin: 20px 0;
+        background: url(../images/shop.jpg) center center no-repeat;
+        background-size: cover;
 
         @include tabletAndPhone {
           width: 100%;
         }
-
-        img {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          -o-object-fit: cover;
-          object-fit: cover;
-        }
       }
 
-      .storemap {
+      .shop_map {
         width: 50vw;
         height: 40vh;
         margin: 20px 0;
@@ -460,6 +472,8 @@ nav {
     min-height: 36vh;
     background-color: $gray;
     color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     padding: 5%;
     display: flex;
     flex-wrap: wrap;
@@ -493,7 +507,7 @@ nav {
       }
     }
 
-    .thanks {
+    .thanks-list {
       width: calc(90% - 300px);
       min-width: 300px;
       ul {
