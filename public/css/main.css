@@ -14,12 +14,12 @@ li {
 html {
   height: 100%;
   width: 100%;
-  min-width: 360px;
+  min-width: 320px;
   font-size: 62.5%; }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   color: #fff;
   font: 1.6rem "Sen", sans-serif;
   font-weight: 400;
@@ -41,15 +41,15 @@ body {
 
 .background {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   background-color: #000;
   background: url(../images/bg.jpg) center top no-repeat;
   background-size: cover; }
 
 .wrapper {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; }
@@ -76,8 +76,8 @@ body {
           opacity: 0.5; }
   .wrapper header {
     position: relative;
-    width: 100vw;
-    height: 100%; }
+    height: 100%;
+    width: 100%; }
     .wrapper header .logo {
       position: absolute;
       top: 3vmin;
@@ -146,8 +146,8 @@ body {
     transform: translate(0px, 20px); } }
   .wrapper .container {
     position: relative;
-    width: 100vw;
-    min-height: 100vh;
+    width: 100%;
+    min-height: 100%;
     background-color: #dfe9f0;
     color: #32160b;
     padding: 5%; }
@@ -341,8 +341,8 @@ body {
             width: 100%; } }
   .wrapper footer {
     position: relative;
-    width: 100vw;
-    min-height: 36vh;
+    width: 100%;
+    min-height: 36%;
     background-color: #3b3b3b;
     color: #fff;
     vertical-align: middle;
