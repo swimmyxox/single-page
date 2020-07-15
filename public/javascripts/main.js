@@ -28,7 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
           entry.target.appendChild(span);
         } else {
           entry.target.classList.remove("animation");
-          entry.target.appendChild(span);
         }
       });
     });
