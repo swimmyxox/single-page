@@ -346,6 +346,10 @@ body {
         opacity: 1;
         transform: translateX(0%);
       }
+      25% {
+        opacity: 0.9;
+        transform: translateX(70%);
+      }
       100% {
         opacity: 0;
         transform: translateX(100%);
@@ -356,6 +360,10 @@ body {
       0% {
         opacity: 1;
         transform: translateX(0%);
+      }
+      25% {
+        opacity: 0.9;
+        transform: translateX(70%);
       }
       100% {
         opacity: 0;
