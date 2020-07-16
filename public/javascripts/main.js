@@ -1,10 +1,10 @@
-// nav color change
 window.addEventListener("DOMContentLoaded", () => {
+  // nav color change
   document.querySelector(".wrapper").addEventListener("scroll", function () {
     var scroll = this.scrollTop;
     let topY = document.body.clientHeight;
 
-    if (topY <= scroll) {
+    if (topY * 0.8 <= scroll) {
       Array.from(document.querySelectorAll(".navi")).forEach(
         (navi) => (navi.style.color = "#32160b")
       );

@@ -44,7 +44,8 @@ body {
   height: 100%;
   width: 100%;
   background-color: #000;
-  background: url(../images/bg.jpg) center top no-repeat;
+  background-repeat: no-repeat;
+  background-position: center top;
   background-size: cover; }
 
 .wrapper {
@@ -172,7 +173,8 @@ body {
       position: relative;
       width: 100%;
       height: 50vh;
-      background: url(../images/hero.jpg) 70% center no-repeat;
+      background-position: 70% center;
+      background-repeat: no-repeat;
       background-size: cover;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden; }
@@ -327,7 +329,8 @@ body {
         width: 38vw;
         height: 40vh;
         margin: 20px 0;
-        background: url(../images/shop.jpg) center center no-repeat;
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover; }
         @media screen and (max-width: 1024px) and (min-width: 320px) {
           .wrapper .container .information .shop_img {
