@@ -196,13 +196,12 @@ body {
       backface-visibility: hidden;
       opacity: 0;
       will-change: opacity; }
-    .wrapper .container .animation {
-      position: relative;
+    .wrapper .container .animation_fade {
       -webkit-animation-delay: 1s;
       animation-delay: 1s;
       -webkit-animation: fade 1.2s ease forwards;
       animation: fade 1.2s ease forwards; }
-    .wrapper .container span {
+    .wrapper .container .animation_slidein {
       position: absolute;
       top: 0;
       left: 0;

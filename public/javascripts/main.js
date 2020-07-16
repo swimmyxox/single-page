@@ -20,14 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("DOMContentLoaded", () => {
   (() => {
     const image = document.querySelectorAll(".hero_img , .item");
-    let span = document.createElement("span");
+    let div = document.createElement("div");
+    div.className = "animation_slidein";
     const animation = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
-          entry.target.classList.add("animation");
-          entry.target.appendChild(span);
+          entry.target.classList.add("animation_fade");
+          entry.target.appendChild(div);
         } else {
-          entry.target.classList.remove("animation");
+          entry.target.classList.remove("animation_fade");
         }
       });
     });
