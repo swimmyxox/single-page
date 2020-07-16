@@ -3,15 +3,11 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".wrapper").addEventListener("scroll", function () {
     let scroll = this.scrollTop;
     let topY = document.body.clientHeight;
-
+    let nav = document.querySelectorAll(".navi");
     if (topY * 0.8 <= scroll) {
-      Array.from(document.querySelectorAll(".navi")).forEach(
-        (navi) => (navi.style.color = "#32160b")
-      );
+      Array.from(nav).forEach((navItem) => (navItem.style.color = "#32160b"));
     } else {
-      Array.from(document.querySelectorAll(".navi")).forEach(
-        (navi) => (navi.style.color = "#ffffff")
-      );
+      Array.from(nav).forEach((navItem) => (navItem.style.color = "#ffffff"));
     }
   });
 });
@@ -19,14 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
 // add animation
 window.addEventListener("DOMContentLoaded", () => {
   (() => {
-    const image = document.querySelectorAll(".hero_img , .item");
-    let div = document.createElement("div");
-    div.className = "animation_slidein";
-    const animation = new IntersectionObserver((entries) => {
+    let image = document.querySelectorAll(".hero_img , .item");
+    let animation = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
+          const d = document.createElement("div");
+          d.className = "animation_slidein";
           entry.target.classList.add("animation_fade");
-          entry.target.appendChild(div);
+          entry.target.appendChild(d);
         } else {
           entry.target.classList.remove("animation_fade");
         }
@@ -38,8 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
   })();
 
   (() => {
-    const text = document.querySelectorAll(".text");
-    const show = new IntersectionObserver((entries) => {
+    let text = document.querySelectorAll(".text");
+    let show = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
           entry.target.classList.add("show");
