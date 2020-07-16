@@ -216,7 +216,7 @@ body {
       pointer-events: none;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      will-change: transform;
+      will-change: transform opacity;
       z-index: 1; }
 
 @-webkit-keyframes fade {
