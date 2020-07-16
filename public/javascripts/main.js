@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   // nav color change
   document.querySelector(".wrapper").addEventListener("scroll", function () {
-    var scroll = this.scrollTop;
+    let scroll = this.scrollTop;
     let topY = document.body.clientHeight;
 
     if (topY * 0.8 <= scroll) {
@@ -19,8 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
 // add animation
 window.addEventListener("DOMContentLoaded", () => {
   (() => {
-    const image = document.querySelectorAll(".hero_img , .items ");
-    var span = document.createElement("span");
+    const image = document.querySelectorAll(".hero_img , .item");
+    let span = document.createElement("span");
     const animation = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.intersectionRatio > 0) {
@@ -37,12 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
   })();
 
   (() => {
-    const text = document.querySelectorAll(
-      "h1 , p , dl , .shop_img , .shop_map"
-    );
+    const text = document.querySelectorAll("h1 , p , dl");
     const show = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.04) {
+        if (entry.intersectionRatio > 0.03) {
           entry.target.classList.add("show");
         }
       });

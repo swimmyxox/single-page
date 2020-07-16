@@ -1,12 +1,12 @@
 // ---------- color palette ----------
 $white: #fff;
 $black: #000;
+$darkbrown: #141311;
 $brown: #32160b;
 $lightbrown: #bfaaa1;
 $gray: #3b3b3b;
 $lightgray: #ababab;
 $iceblue: #dfe9f0;
-$darkgreen: #183c48;
 
 // ---------- mediaQuery mixin ----------
 @mixin tablet {
@@ -85,9 +85,9 @@ body {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: $black;
-  background-repeat: no-repeat;
+  background-color: $darkblack;
   background-position: center top;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -102,8 +102,10 @@ body {
   // ---------- nav ----------
   nav {
     position: fixed;
-    top: 3vmin;
-    right: 2vmin;
+    top: 3vh;
+    right: 2vw;
+    width: 19px;
+    height: 296.08px;
     z-index: 3;
 
     @include phone {
@@ -271,8 +273,8 @@ body {
 
     .animation {
       position: relative;
-      -webkit-animation: fade 1.6s ease-in-out forwards;
-      animation: fade 1.6s ease-in-out forwards;
+      -webkit-animation: fade 1.6s ease forwards;
+      animation: fade 1.6s ease forwards;
     }
 
     span {
@@ -281,8 +283,8 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      -webkit-animation: slideIn 1s ease-in-out forwards;
-      animation: slideIn 1s ease-in-out forwards;
+      -webkit-animation: slideIn 0.6s ease-out forwards;
+      animation: slideIn 0.6s ease-out forwards;
       background: $iceblue;
       pointer-events: none;
       -webkit-backface-visibility: hidden;
@@ -310,18 +312,22 @@ body {
 
     @-webkit-keyframes slideIn {
       0% {
+        opacity: 1;
         transform: translateX(0%);
       }
       100% {
+        opacity: 0;
         transform: translateX(100%);
       }
     }
 
     @keyframes slideIn {
       0% {
+        opacity: 1;
         transform: translateX(0%);
       }
       100% {
+        opacity: 0;
         transform: translateX(100%);
       }
     }
@@ -477,8 +483,8 @@ body {
         width: 38vw;
         height: 40vh;
         margin: 20px 0;
-        background-repeat: no-repeat;
         background-position: center center;
+        background-repeat: no-repeat;
         background-size: cover;
 
         @include tabletAndPhone {
