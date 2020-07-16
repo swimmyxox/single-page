@@ -237,26 +237,51 @@ body {
     color: $brown;
     padding: 5%;
 
-    h1 {
-      font-size: 4.2rem;
-      letter-spacing: 0.8rem;
-      word-break: keep-all;
+    .text {
+      h1 {
+        font-size: 4.2rem;
+        letter-spacing: 0.8rem;
+        word-break: keep-all;
 
-      @include phone {
-        font-size: 3rem;
+        @include phone {
+          font-size: 3rem;
+        }
       }
-    }
 
-    p {
-      font-weight: 500;
-      font-size: 2.4rem;
-      padding: 30px 0;
-      line-height: 3.6rem;
-      word-break: keep-all;
+      p {
+        font-weight: 500;
+        font-size: 2.4rem;
+        padding: 30px 0;
+        line-height: 3.6rem;
+        word-break: keep-all;
 
-      @include phone {
-        font-size: 1.8rem;
-        line-height: 2.8rem;
+        @include phone {
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
+      }
+
+      dl {
+        font-size: 2.4rem;
+        line-height: 3.8rem;
+
+        @include phone {
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
+
+        dt {
+          float: left;
+        }
+
+        dd {
+          margin-left: 170px;
+        }
+
+        dt,
+        dd {
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -270,12 +295,15 @@ body {
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       opacity: 0;
+      will-change: opacity;
     }
 
     .animation {
       position: relative;
-      -webkit-animation: fade 1.6s ease forwards;
-      animation: fade 1.6s ease forwards;
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+      -webkit-animation: fade 1.2s ease forwards;
+      animation: fade 1.2s ease forwards;
     }
 
     span {
@@ -286,12 +314,13 @@ body {
       height: 100%;
       -webkit-animation-delay: 1s;
       animation-delay: 1s;
-      -webkit-animation: slideIn 1s linear forwards;
-      animation: slideIn 1s linear forwards;
+      -webkit-animation: slideIn 1s ease-out forwards;
+      animation: slideIn 1s ease-out forwards;
       background: $iceblue;
       pointer-events: none;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      will-change: transform;
       z-index: 1;
     }
 
@@ -336,8 +365,6 @@ body {
     }
 
     .show {
-      -webkit-animation-delay: 1s;
-      animation-delay: 1s;
       -webkit-animation: show 1.6s ease forwards;
       animation: show 1.6s ease forwards;
     }
@@ -392,6 +419,7 @@ body {
         position: relative;
         margin: 0 30px 60px 30px;
         opacity: 0;
+        will-change: opacity;
 
         @include phone {
           margin: 0 0 60px 0;
@@ -449,29 +477,6 @@ body {
         &:active i {
           top: 5%;
         }
-      }
-    }
-
-    dl {
-      font-size: 2.4rem;
-      line-height: 3.8rem;
-
-      @include phone {
-        font-size: 1.8rem;
-        line-height: 2.8rem;
-      }
-
-      dt {
-        float: left;
-      }
-
-      dd {
-        margin-left: 170px;
-      }
-
-      dt,
-      dd {
-        margin-bottom: 10px;
       }
     }
 

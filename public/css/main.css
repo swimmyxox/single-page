@@ -154,23 +154,37 @@ body {
     background-color: #dfe9f0;
     color: #32160b;
     padding: 5%; }
-    .wrapper .container h1 {
+    .wrapper .container .text h1 {
       font-size: 4.2rem;
       letter-spacing: 0.8rem;
       word-break: keep-all; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
-        .wrapper .container h1 {
+        .wrapper .container .text h1 {
           font-size: 3rem; } }
-    .wrapper .container p {
+    .wrapper .container .text p {
       font-weight: 500;
       font-size: 2.4rem;
       padding: 30px 0;
       line-height: 3.6rem;
       word-break: keep-all; }
       @media screen and (max-width: 767px) and (min-width: 320px) {
-        .wrapper .container p {
+        .wrapper .container .text p {
           font-size: 1.8rem;
           line-height: 2.8rem; } }
+    .wrapper .container .text dl {
+      font-size: 2.4rem;
+      line-height: 3.8rem; }
+      @media screen and (max-width: 767px) and (min-width: 320px) {
+        .wrapper .container .text dl {
+          font-size: 1.8rem;
+          line-height: 2.8rem; } }
+      .wrapper .container .text dl dt {
+        float: left; }
+      .wrapper .container .text dl dd {
+        margin-left: 170px; }
+      .wrapper .container .text dl dt,
+      .wrapper .container .text dl dd {
+        margin-bottom: 10px; }
     .wrapper .container .hero_img {
       position: relative;
       width: 100%;
@@ -180,11 +194,14 @@ body {
       background-size: cover;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      opacity: 0; }
+      opacity: 0;
+      will-change: opacity; }
     .wrapper .container .animation {
       position: relative;
-      -webkit-animation: fade 1.6s ease forwards;
-      animation: fade 1.6s ease forwards; }
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+      -webkit-animation: fade 1.2s ease forwards;
+      animation: fade 1.2s ease forwards; }
     .wrapper .container span {
       position: absolute;
       top: 0;
@@ -193,12 +210,13 @@ body {
       height: 100%;
       -webkit-animation-delay: 1s;
       animation-delay: 1s;
-      -webkit-animation: slideIn 1s linear forwards;
-      animation: slideIn 1s linear forwards;
+      -webkit-animation: slideIn 1s ease-out forwards;
+      animation: slideIn 1s ease-out forwards;
       background: #dfe9f0;
       pointer-events: none;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
+      will-change: transform;
       z-index: 1; }
 
 @-webkit-keyframes fade {
@@ -229,8 +247,6 @@ body {
     opacity: 0;
     transform: translateX(100%); } }
     .wrapper .container .show {
-      -webkit-animation-delay: 1s;
-      animation-delay: 1s;
       -webkit-animation: show 1.6s ease forwards;
       animation: show 1.6s ease forwards; }
 
@@ -272,7 +288,8 @@ body {
       .wrapper .container .items .item {
         position: relative;
         margin: 0 30px 60px 30px;
-        opacity: 0; }
+        opacity: 0;
+        will-change: opacity; }
         @media screen and (max-width: 767px) and (min-width: 320px) {
           .wrapper .container .items .item {
             margin: 0 0 60px 0; } }
@@ -315,20 +332,6 @@ body {
         .wrapper .container .items .item:hover i,
         .wrapper .container .items .item:active i {
           top: 5%; }
-    .wrapper .container dl {
-      font-size: 2.4rem;
-      line-height: 3.8rem; }
-      @media screen and (max-width: 767px) and (min-width: 320px) {
-        .wrapper .container dl {
-          font-size: 1.8rem;
-          line-height: 2.8rem; } }
-      .wrapper .container dl dt {
-        float: left; }
-      .wrapper .container dl dd {
-        margin-left: 170px; }
-      .wrapper .container dl dt,
-      .wrapper .container dl dd {
-        margin-bottom: 10px; }
     .wrapper .container .information {
       display: flex;
       flex-wrap: wrap;

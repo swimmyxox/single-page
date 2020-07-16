@@ -37,10 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
   })();
 
   (() => {
-    const text = document.querySelectorAll("h1 , p , dl");
+    const text = document.querySelectorAll(".text");
     const show = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0.03) {
+        if (entry.intersectionRatio > 0) {
           entry.target.classList.add("show");
         }
       });
